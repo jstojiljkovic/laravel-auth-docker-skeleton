@@ -9,6 +9,7 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
@@ -82,4 +83,12 @@ class User extends Authenticatable
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    /**
+     * Get the social accounts for the user.
+     */
+    public function socials(): HasMany
+    {
+        return $this->hasMany(Social::class);
+    }
 }

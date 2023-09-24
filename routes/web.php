@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\V1\Auth\Socials\GoogleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['middleware' => ['web']], function () {
+    Route::controller(GoogleController::class)->group(function () {
+       Route::get('auth/google', 'redirect');
+       Route::get('auth/google/callback', 'callback');
+    });
 });
