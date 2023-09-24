@@ -1,5 +1,9 @@
 # API Documentation
 
+The point of this repository is to be always up to date with Laravel and have basic Passport auth ready to go for any project, there are 2 branches from which you can choose to start a project:
+1. ```feature/regular-auth``` - as the name says the basic auth using Passport and personal tokens with email/username and password
+2. ```feature/social-auth``` - using Laravel Socialite and providing both the above point and logging with all the logging providers which Laravel Socialite provides
+
 # Configuration
 
 Before API usage, please rename `.env.example` into `.env` (and populate it based on the command outputs)
