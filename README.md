@@ -26,5 +26,3 @@ composer install
 ```bash
 ./vendor/bin/sail up -d
 ```
-
-You can pull out the Postman collection which is at the root of the application named `instatch-api.postman_collection`
